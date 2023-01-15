@@ -1,0 +1,24 @@
+
+{
+    "contact": {
+      "firstName": "Elijah",
+      "lastName": "Aiono",
+      "email": "elilaiono@gmail.com",
+      "favoriteColor": "Blue",
+      "birthday": "06/21/99"
+    },
+    "contact2": {
+      "firstName": "Ashley",
+      "lastName": "Jensen",
+      "email": "ashley@gmail.com",
+      "favoriteColor": "Green",
+      "birthday": "11/08/00"
+    },
+    "contact3": {
+      "firstName": "Kimberly",
+      "lastName": "Aiono",
+      "email": "kimberly@yahoo.com",
+      "favoriteColor": "Blue",
+      "birthday": "01/27/66"
+    }
+  }
