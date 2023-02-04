@@ -1,0 +1,31 @@
+
+{
+    "player": {
+      "firstName": "Elijah",
+      "lastName": "Aiono",
+      "expLvl": "intermediate",
+      "favCourse": "Crest Park",
+      "favDisc": "The Beast",
+      "throwStyle": "backhand",
+      "longestShot": "110m"
+    },
+    "player2": {
+      "firstName": "Jesse",
+      "lastName": "Gonzalez",
+      "expLvl": "Advanced",
+      "favCourse": "Nature Park",
+      "favDisc": "The Roc",
+      "throwStyle": "backhand",
+      "longestShot": "56m"
+    },
+    "player3": {
+      "firstName": "Brandon",
+      "lastName": "Jones",
+      "expLvl": "Beginner",
+      "favCourse": "Washington Park",
+      "favDisc": "The Destroyer",
+      "throwStyle": "forehand",
+      "longestShot": "95m"
+    }
+   
+  }

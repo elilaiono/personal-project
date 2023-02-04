@@ -2,7 +2,7 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
-  const result = await mongodb.getDb().db().collection('contacts').find();
+  const result = await mongodb.getDb().db().collection('Disc_Golf').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
@@ -11,22 +11,24 @@ const getAll = async (req, res) => {
 
 const getSingle = async (req, res) => {
   const userId = new ObjectId(req.params.id);
-  const result = await mongodb.getDb().db().collection('contacts').find({ _id: userId });
+  const result = await mongodb.getDb().db().collection('Disc_Golf').find({ _id: userId });
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists[0]);
   });
 };
 
-const createContact = async (req, res) => {
-  const contact = {
+const createPlayer = async (req, res) => {
+  const player = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday
+    expLvl: req.body.expLvl,
+    favCourse: req.body.favCourse,
+    favDisc: req.body.favDisc,
+    throwStyle: req.body.throwStyle,
+    longestShot: req.body.longestShot
   };
-  const response = await mongodb.getDb().db().collection('contacts').insertOne(contact);
+  const response = await mongodb.getDb().db().collection('Disc_Golf').insertOne(player);
   if (response.acknowledged) {
     res.status(201).json(response);
   } else {
@@ -34,21 +36,23 @@ const createContact = async (req, res) => {
   }
 };
 
-const updateContact = async (req, res) => {
+const updatePlayer = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   // be aware of updateOne if you only want to update specific fields
-  const contact = {
+  const player = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday
+    expLvl: req.body.expLvl,
+    favCourse: req.body.favCourse,
+    favDisc: req.body.favDisc,
+    throwStyle: req.body.throwStyle,
+    longestShot: req.body.longestShot
   };
   const response = await mongodb
     .getDb()
     .db()
-    .collection('contacts')
-    .replaceOne({ _id: userId }, contact);
+    .collection('Disc_Golf')
+    .replaceOne({ _id: userId }, player);
   console.log(response);
   if (response.modifiedCount > 0) {
     res.status(204).send();
@@ -57,9 +61,9 @@ const updateContact = async (req, res) => {
   }
 };
 
-const deleteContact = async (req, res) => {
+const deletePlayer = async (req, res) => {
   const userId = new ObjectId(req.params.id);
-  const response = await mongodb.getDb().db().collection('contacts').remove({ _id: userId }, true);
+  const response = await mongodb.getDb().db().collection('Disc_Golf').remove({ _id: userId }, true);
   console.log(response);
   if (response.deletedCount > 0) {
     res.status(204).send();
@@ -71,7 +75,7 @@ const deleteContact = async (req, res) => {
 module.exports = {
   getAll,
   getSingle,
-  createContact,
-  updateContact,
-  deleteContact
+  createPlayer,
+  updatePlayer,
+  deletePlayer
 };

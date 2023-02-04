@@ -1,49 +1,38 @@
 //LOCALHOST
-### GET 
-GET http://localhost:3000 HTTP/1.1
-
-### GET
-GET http://localhost:3000/mongoData HTTP/1.1
 
 ### GET all
-GET http://localhost:8080/contacts
+GET http://localhost:8080/Disc_Golf
 
 ### GET by id
-GET http://localhost:8080/contacts/63c361bed13d4d87089cdf5e
-
-### GET by id
-GET  http://localhost:8080/contacts/63c361f4d13d4d87089cdf5f
-
-### GET by id 
-GET http://localhost:8080/contacts/63c36225d13d4d87089cdf60
-
+GET http://localhost:8080/Disc_Golf/63deebd28209ebeea5314c5d
 ### create contact POST
-POST http://localhost:8080/contacts HTTP/1.1 
+POST http://localhost:8080/Disc_Golf HTTP/1.1 
 content-type: application/json
 
-{
-
-"firstName":"Boe", 
-"lastName":"Jiden", 
-"email":"boe@gmail.com",
- "favoriteColor":"White", 
- "birthday":"11/14/1969"
-
+ {
+      "firstName": "Elijah",
+      "lastName": "Aiono",
+      "expLvl": "intermediate",
+      "favCourse": "Crest Park",
+      "favDisc": "The Beast",
+      "throwStyle": "backhand",
+      "longestShot": "110m"
 }
 
 ### PUT contact
-PUT http://localhost:8080/contacts/63ccbfef73367df2405853ea HTTP/1.1
+PUT http://localhost:8080/Disc_Golf/63ccbfef73367df2405853ea HTTP/1.1
 content-type: application/json
 
-{
+# {
 
-"firstName":"Kellen", 
-"lastName":"Heller", 
-"email":"kh@yahoo.com", 
-"favoriteColor":"None", 
-"birthday":"10/31/1932"
+#  {
+#       "firstName": "Brandon",
+#       "lastName": "Jones",
+#       "expLvl": "Beginner",
+#       "favCourse": "Washington Park",
+#       "favDisc": "The Destroyer",
+#       "throwStyle": "forehand",
+#       "longestShot": "95m"
+#     }
 
-}
-
-### DELETE by id
-DELETE http://localhost:8080/contacts/63ccbfef73367df2405853ea HTTP/1.1
+# }
