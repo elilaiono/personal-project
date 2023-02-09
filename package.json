@@ -1,5 +1,5 @@
 {
-  "name": "cse341discgolf",
+  "name": "discgolf",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -17,7 +17,7 @@
     "body": "^5.1.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongodb": "^4.13.0",
+    "mongodb": "^4.14.0",
     "nodemon": "^2.0.20",
     "parser": "^0.1.4",
     "swagger-ui-express": "^4.6.0"

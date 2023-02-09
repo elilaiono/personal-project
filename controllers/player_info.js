@@ -2,7 +2,7 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
-  const result = await mongodb.getDb().db().collection('Disc_Golf').find();
+  const result = await mongodb.getDb().db().collection('player_info').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
@@ -11,7 +11,7 @@ const getAll = async (req, res) => {
 
 const getSingle = async (req, res) => {
   const userId = new ObjectId(req.params.id);
-  const result = await mongodb.getDb().db().collection('Disc_Golf').find({ _id: userId });
+  const result = await mongodb.getDb().db().collection('player_info').find({ _id: userId });
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists[0]);
@@ -28,7 +28,7 @@ const createPlayer = async (req, res) => {
     throwStyle: req.body.throwStyle,
     longestShot: req.body.longestShot
   };
-  const response = await mongodb.getDb().db().collection('Disc_Golf').insertOne(player);
+  const response = await mongodb.getDb().db().collection('player_info').insertOne(player);
   if (response.acknowledged) {
     res.status(201).json(response);
   } else {
@@ -51,7 +51,7 @@ const updatePlayer = async (req, res) => {
   const response = await mongodb
     .getDb()
     .db()
-    .collection('Disc_Golf')
+    .collection('disc_golf')
     .replaceOne({ _id: userId }, player);
   console.log(response);
   if (response.modifiedCount > 0) {
@@ -63,7 +63,7 @@ const updatePlayer = async (req, res) => {
 
 const deletePlayer = async (req, res) => {
   const userId = new ObjectId(req.params.id);
-  const response = await mongodb.getDb().db().collection('Disc_Golf').remove({ _id: userId }, true);
+  const response = await mongodb.getDb().db().collection('player_info').remove({ _id: userId }, true);
   console.log(response);
   if (response.deletedCount > 0) {
     res.status(204).send();

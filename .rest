@@ -1,38 +1,43 @@
-//LOCALHOST
 
 ### GET all
-GET http://localhost:8080/Disc_Golf
+GET http://localhost:8080/contacts
 
-### GET by id
-GET http://localhost:8080/Disc_Golf/63deebd28209ebeea5314c5d
+### GET by id 
+GET http://localhost:8080/contacts/63c36225d13d4d87089cdf60
+
 ### create contact POST
-POST http://localhost:8080/Disc_Golf HTTP/1.1 
+POST http://localhost:8080/player_info HTTP/1.1 
 content-type: application/json
 
- {
-      "firstName": "Elijah",
-      "lastName": "Aiono",
-      "expLvl": "intermediate",
-      "favCourse": "Crest Park",
-      "favDisc": "The Beast",
-      "throwStyle": "backhand",
-      "longestShot": "110m"
+{
+
+"firstName": "Hunter",
+"lastName": "Aiono",
+"expLvl": "intermediate",
+"favCourse": "Washington Park",
+"favDisc": "The Cobra",
+"throwStyle": "backhand",
+"longestShot": "105m"
+
 }
 
 ### PUT contact
-PUT http://localhost:8080/Disc_Golf/63ccbfef73367df2405853ea HTTP/1.1
+PUT http://localhost:8080/player_info/63e47877e15caaf3bbb55401 HTTP/1.1
 content-type: application/json
 
-# {
+{
 
-#  {
-#       "firstName": "Brandon",
-#       "lastName": "Jones",
-#       "expLvl": "Beginner",
-#       "favCourse": "Washington Park",
-#       "favDisc": "The Destroyer",
-#       "throwStyle": "forehand",
-#       "longestShot": "95m"
-#     }
+"firstName": "Elijah",
+"lastName": "Aiono",
+"expLvl": "Advanced",
+"favCourse": "Crest Park",
+"favDisc": "The Beast",
+"throwStyle": "Backhand",
+"longestShot": "110m"
 
-# }
+}
+
+### DELETE by id
+DELETE http://localhost:8080/contacts/63ccbfef73367df2405853ea HTTP/1.1
+
+
