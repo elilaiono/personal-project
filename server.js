@@ -1,9 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
-const createError = require('http-errors');
-
 const port = process.env.PORT || 8080;
+
 const app = express();
 
 
@@ -16,24 +15,9 @@ app
   })
   .use('/', require('./routes'));
 
-
-
-app.use((req, res, next) => {
-  next(createError(404, 'Not found'));
-});
-
-// use next?
-// app.use((err, req, res) => { 
-//   res.status(err.status || 500);
-//   res.send({
-//     error: {
-//       status: err.status || 500,
-//       message: err.message
-//     }
-//   });
-// });
-
-  
+  process.on('uncaughtException', (err, origin) => {
+    console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
+  });
 
 mongodb.initDb((err) => {
   if (err) {
