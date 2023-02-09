@@ -3,7 +3,7 @@
 GET http://localhost:8080/player_info
 
 ### GET by id 
-GET http://localhost:8080/player_info/63c36225d13d4d87089cdf60
+GET http://localhost:8080/player_info/63e47cb556c9ff40d1c9cdec
 
 ### create contact POST
 POST http://localhost:8080/player_info HTTP/1.1 
@@ -11,13 +11,13 @@ content-type: application/json
 
 {
 
-"firstName": "Hunter",
-"lastName": "Aiono",
-"expLvl": "intermediate",
-"favCourse": "Washington Park",
-"favDisc": "The Cobra",
-"throwStyle": "backhand",
-"longestShot": "105m"
+"firstName": "Joe",
+"lastName": "Shmoe",
+"expLvl": "Beginner",
+"favCourse": "Lakefront Park",
+"favDisc": "The Aviator",
+"throwStyle": "Forehand",
+"longestShot": "12m"
 
 }
 
@@ -29,7 +29,7 @@ content-type: application/json
 
 "firstName": "Elijah",
 "lastName": "Aiono",
-"expLvl": "Advanced",
+"expLvl": "Pro",
 "favCourse": "Crest Park",
 "favDisc": "The Beast",
 "throwStyle": "Backhand",
@@ -38,6 +38,6 @@ content-type: application/json
 }
 
 ### DELETE by id
-DELETE http://localhost:8080/contacts/63ccbfef73367df2405853ea HTTP/1.1
+DELETE http://localhost:8080/player_info/63e47cb556c9ff40d1c9cdec HTTP/1.1
 
 

@@ -4,9 +4,9 @@ const swaggerAutogen = require('swagger-autogen')();
 const doc = {
   info: {
     title: 'My API',
-    description: 'Temple API'
+    description: 'Disc Golf API'
   },
-  host: 'personalassignment04.onrender.com',
+  host: 'https://personal-project-e91g.onrender.com',
   schemes: ['https']
 };
 
@@ -17,6 +17,6 @@ const endpointsFiles = ['./routes/index.js'];
 swaggerAutogen(outputFile, endpointsFiles, doc);
 
 // Run server after it gets generated
-// swaggerAutogen(outputFile, endpointsFiles, doc).then(async () => {
-//   await import('./index.js');
-// });
+swaggerAutogen(outputFile, endpointsFiles, doc).then(async () => {
+  await import('./index.js');
+});
