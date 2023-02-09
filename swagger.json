@@ -5,7 +5,7 @@
     "description": "Players API",
     "version": "1.0.0"
   },
-  "host": "https://personal-project-e91g.onrender.com",
+  "host": "personal-project-e91g.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
