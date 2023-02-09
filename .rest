@@ -1,9 +1,9 @@
 
 ### GET all
-GET http://localhost:8080/contacts
+GET http://localhost:8080/player_info
 
 ### GET by id 
-GET http://localhost:8080/contacts/63c36225d13d4d87089cdf60
+GET http://localhost:8080/player_info/63c36225d13d4d87089cdf60
 
 ### create contact POST
 POST http://localhost:8080/player_info HTTP/1.1 
@@ -22,7 +22,7 @@ content-type: application/json
 }
 
 ### PUT contact
-PUT http://localhost:8080/player_info/63e47877e15caaf3bbb55401 HTTP/1.1
+PUT http://localhost:8080/player_info/63e47cb556c9ff40d1c9cdec HTTP/1.1
 content-type: application/json
 
 {

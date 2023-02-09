@@ -51,7 +51,7 @@ const updatePlayer = async (req, res) => {
   const response = await mongodb
     .getDb()
     .db()
-    .collection('disc_golf')
+    .collection('player_info')
     .replaceOne({ _id: userId }, player);
   console.log(response);
   if (response.modifiedCount > 0) {
