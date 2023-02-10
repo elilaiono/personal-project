@@ -8,14 +8,6 @@ GET http://localhost:8080/player_info/63e47cb556c9ff40d1c9cdec
 ### create contact POST
 POST http://localhost:8080/player_info HTTP/1.1 
 content-type: application/json
-
-
-
-### PUT contact
-PUT http://localhost:8080/player_info/63e47cb556c9ff40d1c9cdec HTTP/1.1
-content-type: application/json
-
-{
 {
 
 "firstName": "Boe",
@@ -27,6 +19,13 @@ content-type: application/json
 "longestShot": "12m"
 
 }
+
+### PUT contact
+PUT http://localhost:8080/player_info/63e47cb556c9ff40d1c9cdec HTTP/1.1
+content-type: application/json
+
+{
+
 "firstName": "Elijah",
 "lastName": "Aiono",
 "expLvl": "Pro",

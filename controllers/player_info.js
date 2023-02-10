@@ -18,7 +18,7 @@ const getAll = (req, res) => {
 };
 const getSingle = (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid contact id to find a player.');
+    res.status(400).json('Must use a valid contact id to find a player.');  
   }
   const userId = new ObjectId(req.params.id);
   mongodb
